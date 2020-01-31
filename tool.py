@@ -99,7 +99,7 @@ def handle_photo():
     src_dir, des_dir = "photos/", "min_photos/"
     file_list = list_img_file(src_dir)
     list_info = []
-    date_list = []
+    month_list = []
     for i in range(len(file_list)):
         filename = file_list[i]
         date_str, info = filename.split("_")
@@ -114,10 +114,10 @@ def handle_photo():
                                                     'type': ['image']
                                                     }
                         }
-            date_list.append(date)
+            month_list.append(year_month)
             list_info.append(new_dict)
-        elif date in date_list:  # 是同一个日期,找到在 Date 数组中的索引
-            index = date_list.index(date)
+        elif year_month in month_list:  # 是同一个月,找到在 Month 数组中的索引
+            index = month_list.index(year_month)
             list_info[index]['arr']['link'].append(filename)
             list_info[index]['arr']['text'].append(info)
             list_info[index]['arr']['type'].append('image')
@@ -130,7 +130,7 @@ def handle_photo():
                                                    'type': ['image']
                                                    }
                         }
-            date_list.append(date)
+            month_list.append(year_month)
             list_info.append(new_dict)
 
     list_info = SortDict(list_info)
