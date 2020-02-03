@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8550836177608334",
+        enable_page_level_ads: true
+    });
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DesignStack" />
+    <meta name="author" content="viggo" />
+    <title>个人导航</title>
+    <meta name="keywords" content="个人导航">
+    <meta name="description" content="个人导航">
+    <link rel="shortcut icon" href="./assets/images/favicon.png">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+    <link rel="stylesheet" href="./assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="./assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/xenon-core.css">
+    <link rel="stylesheet" href="./assets/css/xenon-components.css">
+    <link rel="stylesheet" href="./assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <script src="./assets/js/jquery-1.11.1.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- / FB Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://www.webstack.cc/">
+    <meta property="og:title" content="个人导航">
+    <meta property="og:description" content="个人导航">
+    <meta property="og:image" content="http://webstack.cc/assets/images/webstack_banner_cn.png">
+    <meta property="og:site_name" content="个人导航">
+    <!-- / Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="个人导航">
+    <meta name="twitter:description" content="个人导航">
+    <meta name="twitter:image" content="http://www.webstack.cc/assets/images/webstack_banner_cn.png">
+</head>
+
+<body class="page-body">
+    <!-- skin-white -->
+    <div class="page-container">
+        <div class="sidebar-menu toggle-others fixed">
+            <div class="sidebar-menu-inner">
+                <header class="logo-env">
+                    <!-- logo -->
+                    <div class="logo">
+                        <a href="index.html" class="logo-expanded">
+                            <img src="./assets/images/logo@2x.png" width="100%" alt="" />
+                        </a>
+                        <a href="index.html" class="logo-collapsed">
+                            <img src="./assets/images/logo-collapsed@2x.png" width="40" alt="" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle visible-xs">
+                        <a href="#" data-toggle="user-info-menu">
+                            <i class="linecons-cog"></i>
+                        </a>
+                        <a href="#" data-toggle="mobile-menu">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </div>
+                </header>
+                <ul id="main-menu" class="main-menu">
+                    <li>
+                        <a href="#常用推荐" class="smooth">
+                            <i class="linecons-star"></i>
+                            <span class="title">常用推荐</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#电子邮箱" class="smooth">
+                            <i class="linecons-mail"></i>
+                            <span class="title">电子邮箱</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="linecons-graduation-cap"></i>
+                            <span class="title">教育机构</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#清华大学" class="smooth">
+                                    <span class="title">清华大学</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#中国石油大学" class="smooth">
+                                    <span class="title">中国石油大学</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#运动数据" class="smooth">
+                            <i class="linecons-heart"></i>
+                            <span class="title">运动数据</span>
+                        </a>
+                    </li>
+                    <div class="submit-tag">
+                        <a href="https://cyh42.github.io/">
+                            <i class="linecons-globe"></i>
+                            <span class="tooltip-blue">sky's blog</span>
+                            <span class="label label-Primary pull-right hidden-collapsed">♥︎</span>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <nav class="navbar user-info-navbar" role="navigation">
+                <!-- User Info, Notifications and Menu Bar -->
+                <!-- Left links for user info navbar -->
+                <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a href="#" data-toggle="sidebar">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 常用推荐 -->
+            <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="常用推荐"></i>常用推荐</h4>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://sspai.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://sspai.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/sspai.ico" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>少数派</strong>
+                                </a>
+                                <p class="overflowClip_2">少数派 - 高效工作，品质生活</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.bilibili.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.bilibili.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/bilibili.ico" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>bilibili</strong>
+                                </a>
+                                <p class="overflowClip_2">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://github.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://github.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/github.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>GitHub</strong>
+                                </a>
+                                <p class="overflowClip_2">Hello World</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!-- END 常用推荐 -->
+            <!-- 电子邮箱 -->
+            <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="电子邮箱"></i>电子邮箱</h4>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://outlook.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://outlook.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/outlook.ico" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Outlook</strong>
+                                </a>
+                                <p class="overflowClip_2">来自 Microsoft 的免费个人电子邮件和日历</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://exmail.qq.com/login', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://exmail.qq.com/login">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/exmail.ico" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>腾讯企业邮箱</strong>
+                                </a>
+                                <p class="overflowClip_2">腾讯企业邮箱-登录入口</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mail.aliyun.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mail.aliyun.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/mail_aliyun.ico" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>阿里邮箱</strong>
+                                </a>
+                                <p class="overflowClip_2">阿里邮箱个人版</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mail.qq.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mail.qq.com/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/qqmail.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>QQ邮箱</strong>
+                                </a>
+                                <p class="overflowClip_2">QQ邮箱</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!--END 电子邮箱 -->
+
+            <!-- 清华大学 -->
+            <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="清华大学"></i>清华大学</h4>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.tsinghua.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.tsinghua.edu.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/tsinghua.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>清华大学</strong>
+                                </a>
+                                <p class="overflowClip_2">学校官网</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://yz.tsinghua.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://yz.tsinghua.edu.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/tsinghua_yz.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>清华大学研究生招生网</strong>
+                                </a>
+                                <p class="overflowClip_2">清华大学研究生招生网</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.sigs.tsinghua.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.sigs.tsinghua.edu.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/tsinghua_sigs.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>清华大学深圳研究生院</strong>
+                                </a>
+                                <p class="overflowClip_2">清华大学深圳研究生院</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <!--END 清华大学 -->
+
+            <!-- 中国石油大学 -->
+            <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="中国石油大学"></i>中国石油大学</h4>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://www.upc.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://www.upc.edu.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/upc.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>中国石油大学</strong>
+                                </a>
+                                <p class="overflowClip_2">石大官网</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://mse.upc.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://mse.upc.edu.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/upc_mse.jpg" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>材料科学与工程学院</strong>
+                                </a>
+                                <p class="overflowClip_2">中国石油大学（华东）材料科学与工程学院</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://sjpt.upc.edu.cn/bylw/index.aspx', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://sjpt.upc.edu.cn/bylw/index.aspx">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/upc_jwxt.jpg" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>教务系统</strong>
+                                </a>
+                                <p class="overflowClip_2">中国石油大学（华东）综合教务管理系统-强智科技</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://sjpt.upc.edu.cn/bylw/index.aspx', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://sjpt.upc.edu.cn/bylw/index.aspx">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/upc_bysj.jpg" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>毕业设计</strong>
+                                </a>
+                                <p class="overflowClip_2">中国石油大学毕业设计(论文)智能管理系统</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://cas.upc.edu.cn/cas/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://cas.upc.edu.cn/cas/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/upc_i.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>数字石大</strong>
+                                </a>
+                                <p class="overflowClip_2">i石大･统一身份认证平台</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://wvpn.upc.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://wvpn.upc.edu.cn/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/upc_wvpn.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>WebVPN</strong>
+                                </a>
+                                <p class="overflowClip_2">中国石油大学（华东）WebVPN免客户端免配置，一键访问内网服务器</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            </br>
+            <!--END 中国石油大学 -->
+
+            <!-- 运动数据 -->
+            <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="运动数据"></i>运动数据</h4>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://www.tulipsport.com/user/965fadb51cb94f14d6d3257beffa9d12', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://www.tulipsport.com/user/965fadb51cb94f14d6d3257beffa9d12">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/tulipsport.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>郁金香运动</strong>
+                                </a>
+                                <p class="overflowClip_2">记录跑步、骑车、走路活动，GPS路线、速度、步频、卡路里、海拔、心率数据一应俱全。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://connect.garmin.cn/modern/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://connect.garmin.cn/modern/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/garmin.jpg" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Garmin Connect</strong>
+                                </a>
+                                <p class="overflowClip_2">您可以将数据从其他帐户或活动跟踪器提取到 Garmin Connect</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://www.movescount.com/zh/overview', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://www.movescount.com/zh/overview">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img src="./assets/images/logos/movescount.png" class="img-circle" width="40">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Movescount</strong>
+                                </a>
+                                <p class="overflowClip_2">Movescount - 我们的运动社区，每个 Move 都精彩</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <!--END 运动数据 -->
+
+            <!-- Main Footer -->
+            <!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
+            <!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
+            <!-- Or class "fixed" to  always fix the footer to the end of page -->
+            <footer class="main-footer sticky footer-type-1">
+                <div class="footer-inner">
+                    <!-- Add your copyright text here -->
+                    <div class="footer-text">
+                        &copy; 2020 design by <a href="https://cyh42.github.io/" target="_blank"><strong>sky</strong></a>
+                        <!--  - Purchase for only <strong>23$</strong> -->
+                    </div>
+                    <!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+                    <div class="go-up">
+                        <a href="#" rel="go-top">
+                            <i class="fa-angle-up"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- 锚点平滑移动 -->
+    <script type="text/javascript">
+    // $(document).ready(function() {
+    //     $("#main-menu li ul li").click(function() {
+    //         $(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
+    //         $(this).addClass('active'); // 添加当前元素的样式
+    //     });
+    //     $("a.smooth").click(function() {
+    //         $("html, body").animate({
+    //             scrollTop: $($(this).attr("href")).offset().top - 30
+    //         }, {
+    //             duration: 500,
+    //             easing: "swing"
+    //         });
+    //     });
+    //        return false;
+    // });
+
+    var href = "";
+    var pos = 0;
+    $("a.smooth").click(function(e) {
+        $("#main-menu li").each(function() {
+            $(this).removeClass("active");
+        });
+        $(this).parent("li").addClass("active");
+        e.preventDefault();
+        href = $(this).attr("href");
+        pos = $(href).position().top - 30;
+        $("html,body").animate({
+            scrollTop: pos
+        }, 500);
+    });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111463289-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111463289-1');
+    </script>
+    <!-- Bottom Scripts -->
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/TweenMax.min.js"></script>
+    <script src="./assets/js/resizeable.js"></script>
+    <script src="./assets/js/joinable.js"></script>
+    <script src="./assets/js/xenon-api.js"></script>
+    <script src="./assets/js/xenon-toggles.js"></script>
+    <!-- JavaScripts initializations and stuff -->
+    <script src="./assets/js/xenon-custom.js"></script>
+</body>
+
+</html>
