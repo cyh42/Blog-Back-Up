@@ -1,4 +1,12 @@
 <head>
+    <title>二维码识别</title>
+</head>
+<body>
+    <input type="file" name="file"   onchange="PreviewImage(this,'imgHeadPhoto','divPreview')"  />  <font color="red"> 图片大小为40＊40</font> <br/>
+    <div id="divPreview">
+        <img id="imgHeadPhoto"  width="200"  height="200" src="/admin/upload/">
+    </div>
+
     <script type="text/javascript">
         function PreviewImage(fileObj,imgPreviewId,divPreviewId){
             var allowExtention=".jpg,.bmp,.gif,.png";//允许上传文件的后缀名document.getElementById("hfAllowPicSuffix").value;
@@ -55,11 +63,5 @@
                 fileObj.outerHTML=fileObj.outerHTML;
             }
         }
-
     </script>
-</head>
-<body>
-<input type="file" name="file"   onchange="PreviewImage(this,'imgHeadPhoto','divPreview')"  />  <font color="red"> 图片大小为40＊40</font> <br/>
-<div id="divPreview">
-    <img id="imgHeadPhoto"  width="200"  height="200" src="/admin/upload/">
 </body>
