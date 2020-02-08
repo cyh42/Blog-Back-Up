@@ -12,10 +12,22 @@
   <div id="app">Loading…</div>
   <script>
     window.$docsify = {
+      auto2top: true,
+      executeScript: true,
+      maxLevel: 4,
+      subMaxLevel: 2,
       name: '',
-      repo: ''
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '没有结果!',
+      },
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
 </body>
 </html>
