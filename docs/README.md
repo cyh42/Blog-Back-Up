@@ -42,6 +42,7 @@ A curated list of awesome things related to Windows software.
 
 ## 图像视频
 
+- [IrfanView](https://www.irfanview.com/) - IrfanView is a fast, compact and innovative FREEWARE (for non-commercial use) graphic viewer for Windows XP, Vista, 7, 8 and 10.
 - [PotPlayer](http://potplayer.daum.net/?lang=zh_CN) - Powerful media player with support for lots of formats.
 
 ## 实用工具
