@@ -15,14 +15,16 @@
       auto2top: true,
       executeScript: true,
       loadSidebar: true,
-      maxLevel: 4,
       subMaxLevel: 2,
       name: '',
       search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        noData: {
+          '/': '没有结果!',
+        },
         paths: 'auto',
-        placeholder: '搜索',
-        noData: '没有结果!',
+        placeholder: {
+          '/': '搜索',
+        }
       },
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
       plugins: [
