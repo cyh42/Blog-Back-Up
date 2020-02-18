@@ -38,11 +38,9 @@
             center: [112.12255, 35.2044],
 			mapStyle: 'dark',
 			features: ['bg', 'road', 'point'],
-            // Loca 自 1.2.0 起 viewMode 模式默认为 3D，如需 2D 模式，请显示配置。
-            // viewMode: '3D'
         });
 
-        var layer = new Loca.HeatmapLayer({
+        var layer = new Loca.PointLayer({
             map: map
         });
 
@@ -52,20 +50,11 @@
         });
 
         layer.setOptions({
-            style: {
-                // 热力半径，单位：像素
-                radius: 3,
-                // 颜色范围
-                color: {
-                    0.2: '#0868AC',
-                    0.4: '#43A2CA',
-                    0.6: '#7BCCC4',
-                    0.8: '#BAE4BC',
-                    1.0: '#F0F9E8',
-                }
-                // color: '#14B4C9', // 填充颜色
-                // borderWidth: 0.5,   // 边框宽度
-                // borderColor: '#14B4C9'  // 边框颜色
+            style: {               
+                radius: 2.5, // 圆形半径，单位像素
+                color: '#14B4C9',
+                borderWidth: 0.5,
+                borderColor: '#14B4C9',
             }
         });
 
@@ -88,7 +77,6 @@
             }
             map.addControl(new AMap.MapType());
         })
-
     </script>
 </body>
 

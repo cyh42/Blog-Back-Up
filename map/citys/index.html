@@ -24,13 +24,8 @@
 <script src="./citys.js"></script>
 <script>
     var map = new AMap.Map("container", {
-        zoom: 4.5,
-        center: [116.412427, 39.303573],
-        pitch: 0,
-        viewMode: '3D',
         mapStyle: 'amap://styles/1de318cbb8d12c02303a22c550b9ccc9',
 		mapStyle: 'dark',
-        defaultCursor:'pointer',
         features: ['bg', 'road'],
     });
 
@@ -38,7 +33,6 @@
     var disProvince;
     function initPro() {
         disProvince = new AMap.DistrictLayer.Province({
-            zIndex: 12,
             adcode: [110000, 120000, 130200, 370100, 370200, 370500, 330100, 330200, 330300, 330400, 330600, 331000, 340100, 320100, 310000, 420100, 610100, 410300, 350200, 320300],
             styles: {
                 'fill': function (properties) {
@@ -51,9 +45,9 @@
                     return getColorByAdcode(adcode);
                 },
                 'province-stroke': 'cornflowerblue',
-                'city-stroke': 'white', // 中国地级市边界
-                'county-stroke': 'rgba(255,255,255,0.5)' // 中国区县边界
-            }
+                'city-stroke': '#4ab3c4', // 中国地级市边界
+            },
+            opacity: 0.6
         });
         disProvince.setMap(map);
     }
@@ -62,7 +56,7 @@
     var colors = {};
     var getColorByAdcode = function (adcode) {
         if (!colors[adcode]) {
-            colors[adcode] = '#6136b2';
+            colors[adcode] = '#4d6e84';
         }
         return colors[adcode];
     };
@@ -71,7 +65,9 @@
     var layer = new Loca.LabelsLayer({
         fitView: true,
         map: map,
-        collision: true
+        collision: true,
+        animation: true,
+        zIndex:99 //叠加层级
     });
 
     layer.setData(citys, {
@@ -81,22 +77,36 @@
 
     layer.setOptions( {
         style: {
+            direction: 'bottom',
             text: function (data) {
                 return data.value['name'];
             },
             fillColor: function (data) {
                 var income = +data.value['style'];
-                    return income == 1 ? '#e5ebe9' : '#bebb93';
-            },
-            fontSize: function (data) {
-                var income = +data.value['style'];
-                return income == 1 ? 12 : 14;
+                    return income == 1 ? '#e5ebe9' : '#e5ebe9';
             },
             strokeWidth: 0
         }
     });
-
     layer.render();
+
+    var layer_0 = new Loca.PointLayer({
+        map: map,
+        zIndex:12 //叠加层级
+    });
+
+    layer_0.setData(citys, {
+        // 指定经纬度所在字段
+        lnglat: 'lnglat'
+    });
+
+    layer_0.setOptions({
+        style: {               
+            radius: 3, // 圆形半径，单位像素
+            color: '#29e4f2',
+        }
+    });
+    layer_0.render();
 
 </script>
 </body>
