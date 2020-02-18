@@ -34,13 +34,14 @@
     <script>
         var map = new AMap.Map('container', {
             mapStyle: 'amap://styles/1de318cbb8d12c02303a22c550b9ccc9',
-            zoom: 5,
-            center: [112.12255, 35.2044],
+            // zoom: 5,
+            // center: [112.12255, 35.2044],
 			mapStyle: 'dark',
 			features: ['bg', 'road', 'point'],
         });
 
         var layer = new Loca.PointLayer({
+            fitView: true,
             map: map
         });
 
