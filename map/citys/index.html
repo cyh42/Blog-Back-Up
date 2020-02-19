@@ -27,6 +27,8 @@
         mapStyle: 'amap://styles/1de318cbb8d12c02303a22c550b9ccc9',
 		mapStyle: 'dark',
         features: ['bg', 'road'],
+        zoom: 5,
+        center: [107.4976, 32.1697],
     });
 
     // 创建省份图层
@@ -63,7 +65,7 @@
     initPro();
 
     var layer = new Loca.LabelsLayer({
-        fitView: true,
+        fitView: false,
         map: map,
         collision: true,
         animation: true,
