@@ -4,23 +4,36 @@
     <meta charset="utf-8">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
+    <link href="http://a.amap.com/Loca/static/manual/example/style/demo.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
     <style>
         html,
         body,
         #container {
+            margin: 0;
+            padding: 0;
             width: 100%;
             height: 100%;
-            margin: 0;
+        }
+        .info span {
+            color: #0288d1;
         }
     </style>
     <title>点亮城市 - 世界那么大，我想去看看</title>
 </head>
 <body>
 <div id="container"></div>
+<div class="info" style="min-width: 200px;">
+    <h4>城市/地区</h4>
+    <p>中文名字：<span id="name">--</span></p>
+    <p>城市编码：<span id="adcode">--</span></p>
+    <p>区号：<span id="citycode">--</span></p><hr>
+    <p>点击地图任意陆地区域</p>
+</div>
 <script src="https://webapi.amap.com/maps?v=1.4.15&key=8b093298b30af4240493f7a641ed0029&plugin=Map3D,AMap.DistrictLayer,AMap.Scale,AMap.ToolBar"></script>
 <script src="https://webapi.amap.com/loca?v=1.3.2&key=8b093298b30af4240493f7a641ed0029"></script>
 <script src="https://a.amap.com/Loca/static/mock/adcodes.js"></script>
+<script src="http://a.amap.com/Loca/static/manual/example/script/demo.js"></script>
 <script src="./citys.js"></script>
 <script>
     var map = new AMap.Map("container", {
@@ -29,33 +42,55 @@
         features: ['bg', 'road'],
         zoom: 5,
         center: [107.4976, 32.1697],
+        eventSupport: true,
     });
 
     // 创建省份图层
     var disProvince;
+    var colors = {};
     function initPro() {
         disProvince = new AMap.DistrictLayer.Province({
             adcode: [110000, 120000, 130200, 370100, 370200, 370500, 330100, 330200, 330300, 330400, 330600, 331000, 340100, 320100, 310000, 420100, 610100, 410300, 350200, 320300],
             styles: {
                 'fill': function (properties) {
-                    // properties为可用于做样式映射的字段，包含
-                    // NAME_CHN:中文名称
-                    // adcode_pro
-                    // adcode_cit
-                    // adcode
                     var adcode = properties.adcode;
                     return getColorByAdcode(adcode);
                 },
-                'province-stroke': 'cornflowerblue',
                 'city-stroke': '#4ab3c4', // 中国地级市边界
             },
-            opacity: 0.6
+            opacity: 0.6,
         });
+
         disProvince.setMap(map);
     }
 
+    map.on('click', function (ev) {
+        var px = ev.pixel;
+        var props = disProvince.getDistrictByContainerPos(px);
+        var adcode = props.adcode;
+        console.log(props)
+        if (props) {
+            var NAME_CHN = props.NAME_CHN;
+            if(NAME_CHN){
+                // 重置行政区样式
+                disProvince.setStyles({
+                    'fill': function (props) {
+                        return props.NAME_CHN == NAME_CHN ? '#FFF684' : colors[adcode];
+                    },
+                    'city-stroke': '#4ab3c4', // 中国地级市边界
+                });
+                updateInfo(props);
+            }
+        }
+    });
+
+    function updateInfo(props) {
+        document.getElementById('name').innerText = props.NAME_CHN;
+        document.getElementById('adcode').innerText = props.adcode;
+        document.getElementById('citycode').innerText = props.citycode;
+    }
+
     // 颜色辅助方法
-    var colors = {};
     var getColorByAdcode = function (adcode) {
         if (!colors[adcode]) {
             colors[adcode] = '#4d6e84';
@@ -93,6 +128,7 @@
     layer.render();
 
     var layer_0 = new Loca.PointLayer({
+        eventSupport: true,
         map: map,
         zIndex:12 //叠加层级
     });
@@ -102,11 +138,32 @@
         lnglat: 'lnglat'
     });
 
+    /*
+    layer_0.on('mouseleave', function (ev) {
+        // 当前元素的原始数据
+        var rawData = ev.rawData;
+        // 原始鼠标事件
+        var originalEvent = ev.originalEvent;
+        openInfoWin(map, originalEvent, {
+            '位置': rawData.lnglat
+        });
+    });
+
+    layer_0.on('mouseleave', function (ev) {
+        closeInfoWin();
+    });
+    */
+
     layer_0.setOptions({
         style: {               
             radius: 3, // 圆形半径，单位像素
             color: '#29e4f2',
+        },
+        /*
+        selectStyle: {
+            radius: 5,
         }
+        */
     });
     layer_0.render();
 
