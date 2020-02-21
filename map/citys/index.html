@@ -67,9 +67,9 @@
     map.on('click', function (ev) {
         var px = ev.pixel;
         var props = disProvince.getDistrictByContainerPos(px);
-        var adcode = props.adcode;
         console.log(props)
         if (props) {
+            var adcode = props.adcode;
             var NAME_CHN = props.NAME_CHN;
             if(NAME_CHN){
                 // 重置行政区样式
