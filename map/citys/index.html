@@ -24,10 +24,10 @@
 <body>
 <div id="container"></div>
 <div class="info" style="min-width: 200px;">
-    <h4>城市/地区</h4>
-    <p>中文名字：<span id="name">--</span></p>
+    <p>行政区：<span id="name">--</span></p>
     <p>城市编码：<span id="adcode">--</span></p>
-    <p>区号：<span id="citycode">--</span></p><hr>
+    <p>区号：<span id="citycode">--</span></p>
+    <p>时间：<span id="date">--</span></p><hr>
     <p>点击地图任意陆地区域</p>
 </div>
 <script src="https://webapi.amap.com/maps?v=1.4.15&key=8b093298b30af4240493f7a641ed0029&plugin=Map3D,AMap.DistrictLayer,AMap.Scale,AMap.ToolBar"></script>
@@ -48,26 +48,23 @@
     // 创建省份图层
     var disProvince;
     var colors = {};
-    function initPro() {
-        disProvince = new AMap.DistrictLayer.Province({
-            adcode: [110000, 120000, 130200, 370100, 370200, 370500, 330100, 330200, 330300, 330400, 330600, 331000, 340100, 320100, 310000, 420100, 610100, 410300, 350200, 320300],
-            styles: {
-                'fill': function (properties) {
-                    var adcode = properties.adcode;
-                    return getColorByAdcode(adcode);
-                },
-                'city-stroke': '#4ab3c4', // 中国地级市边界
+    disProvince = new AMap.DistrictLayer.Province({
+        adcode: [110000, 120000, 130200, 370100, 370200, 370500, 330100, 330200, 330300, 330400, 330600, 331000, 340100, 320100, 310000, 420100, 610100, 410300, 350200, 320300],
+        styles: {
+            'fill': function (properties) {
+                var adcode = properties.adcode;
+                return getColorByAdcode(adcode);
             },
-            opacity: 0.6,
-        });
-
-        disProvince.setMap(map);
-    }
+            'city-stroke': '#4ab3c4', // 中国地级市边界
+        },
+        opacity: 0.6,
+    });
+    disProvince.setMap(map);
 
     map.on('click', function (ev) {
         var px = ev.pixel;
         var props = disProvince.getDistrictByContainerPos(px);
-        console.log(props)
+        // console.log(props)
         if (props) {
             var adcode = props.adcode;
             var NAME_CHN = props.NAME_CHN;
@@ -84,10 +81,20 @@
         }
     });
 
+    // 查询元素在数组中的索引值
+    function arrSelect(arr,val){
+       for (var i = 0; i < arr.length; i++) {
+         if (arr[i].adcode == val) return i;
+       }
+       return -1;
+     }
+
     function updateInfo(props) {
         document.getElementById('name').innerText = props.NAME_CHN;
         document.getElementById('adcode').innerText = props.adcode;
         document.getElementById('citycode').innerText = props.citycode;
+        var i = arrSelect(citys, props.adcode)
+        document.getElementById('date').innerText = citys[i].date;
     }
 
     // 颜色辅助方法
@@ -97,7 +104,6 @@
         }
         return colors[adcode];
     };
-    initPro();
 
     var layer = new Loca.LabelsLayer({
         fitView: false,
@@ -137,22 +143,6 @@
         // 指定经纬度所在字段
         lnglat: 'lnglat'
     });
-
-    /*
-    layer_0.on('mouseleave', function (ev) {
-        // 当前元素的原始数据
-        var rawData = ev.rawData;
-        // 原始鼠标事件
-        var originalEvent = ev.originalEvent;
-        openInfoWin(map, originalEvent, {
-            '位置': rawData.lnglat
-        });
-    });
-
-    layer_0.on('mouseleave', function (ev) {
-        closeInfoWin();
-    });
-    */
 
     layer_0.setOptions({
         style: {               
