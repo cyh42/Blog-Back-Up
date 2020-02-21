@@ -25,7 +25,6 @@
 <div id="container"></div>
 <div class="info" style="min-width: 200px;">
     <p>行政区：<span id="name">--</span></p>
-    <p>城市编码：<span id="adcode">--</span></p>
     <p>区号：<span id="citycode">--</span></p>
     <p>时间：<span id="date">--</span></p><hr>
     <p>点击地图任意陆地区域</p>
@@ -91,7 +90,6 @@
 
     function updateInfo(props) {
         document.getElementById('name').innerText = props.NAME_CHN;
-        document.getElementById('adcode').innerText = props.adcode;
         document.getElementById('citycode').innerText = props.citycode;
         var i = arrSelect(citys, props.adcode)
         document.getElementById('date').innerText = citys[i].date;
